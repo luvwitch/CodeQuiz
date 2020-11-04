@@ -1,0 +1,94 @@
+#start{
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: black;
+    display: none;
+}
+
+
+
+#question1,
+#question2,
+#question3,
+#question4,
+#question5, 
+#yourscore{
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: black;
+    display: none;
+}
+
+#scoresheader {
+    margin: auto;
+    color: black;
+    background-color: tomato;
+    font-size: 75px;
+}
+
+#scores {
+    font-size: 30px;
+    color: black;  
+
+}
+
+#timer {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: tomato;
+    color: black;
+    margin: 30px auto;
+
+}
+
+.scoreinfo {
+    margin: auto;
+    padding: 45px;
+    color: rgb(255, 237, 71);
+    background-color: black;
+    font-size: 30px;
+    text-align: left;
+}
+
+#highscores {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+
+#startBtn {
+    background-color: tomato;
+    font-size: 25px;
+}
+
+#words{
+    font-size: 30px;
+}
+
+#main {
+    width: 80%;
+    max-width: 950px;
+    border: 1px gray solid;
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+}
+        
+input {
+    width: 30px;
+    margin-left: 20px;
+}
+        
+h2 {
+    clear: both;
+    padding-top: 20px;
+}

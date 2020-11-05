@@ -6,14 +6,13 @@
     display: none;
 }
 
-
-
 #question1,
 #question2,
 #question3,
 #question4,
 #question5, 
-#yourscore{
+#yourscore,
+#highscoresbox{
     padding: 40px;
     max-width: 1000px;
     margin: 40px auto;
@@ -21,11 +20,21 @@
     display: none;
 }
 
-#scoresheader {
+#scoresheader{
     margin: auto;
-    color: black;
     background-color: tomato;
-    font-size: 75px;
+    color:black;
+    font-weight: bolder;
+    font-size: 45px;    
+}
+
+#scoresgo,
+#quizback {
+    color: black;
+    background-color: rgb(255, 237, 71);    
+    font-size: 30px;
+    font-weight: 500;
+    border: 0px;
 }
 
 #scores {
@@ -53,13 +62,6 @@
     text-align: left;
 }
 
-#highscores {
-    padding: 40px;
-    max-width: 1000px;
-    margin: 100px auto;
-}
-
-
 #startBtn {
     background-color: tomato;
     font-size: 25px;
@@ -71,24 +73,48 @@
 
 #main {
     width: 80%;
-    max-width: 950px;
-    border: 1px gray solid;
-    margin: auto;
+    max-width: 1000px;
+    border: 2px gray solid;
+    margin: 100px auto;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
 }
 
+#yourscore {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#button1,
+#button2,
+#button3,
+#button4,
+#button5 {
+    background-color: tomato;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px auto;
+}
+
 label {
     display: block;
+    font-size: 30px;
 }
         
-input {
-    width: 30px;
+input[type=radio] {
+    width: 40px;
     margin-left: 20px;
+    background-color: tomato;}
+
+input[type=text] {
+    width: 100%;
+    font-size: 30px;
 }
-        
+       
 h2 {
     clear: both;
     padding-top: 20px;
+    font-size: 35px;
 }

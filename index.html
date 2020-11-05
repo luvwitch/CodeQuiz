@@ -19,12 +19,12 @@
 <!--SCORES LINK-->   
 
     <div class ="container" id="scores"> 
-        <a class="scoreslink" href="scorespage.html"> View Highscores!</a>
+        <button id="scoresgo" class="btn2"> View Highscores!</button>
     </div>
 
 <!--timer-->
     <div class="container" id="timer">
-        <p>Time: 120</p>  
+        <p><span id="time">Press start to start timer!</span></p>  
     </div>
 
 <!--START CONTAINER-->
@@ -46,10 +46,10 @@
     <div class="container" id="question1">
      <form id="form1">
         <h2>Which is the best description of a variable?</h2>
-        <label for="var_1"><input type="radio" name="variable" value="0" id="var_1" />A label for a list of booleans.</label>
-        <label for="var_2"><input type="radio" name="variable" value="0" id="var_2" />A method to create divs.</label>
-        <label for="var_3"><input type="radio" name="variable" value="1" id="var_3" />A way to store information to keep using it through your program.</label>
-        <label for="var_4"><input type="radio" name="variable" value="0" id="var_4"/>A way to add a new element.</label>          
+        <label for="var_1"><input type="radio" name="vari" value="0" id="var_1" />A label for a list of booleans.</label>
+        <label for="var_2"><input type="radio" name="vari" value="0" id="var_2" />A method to create divs.</label>
+        <label for="var_3"><input type="radio" name="vari" value="20" id="var_3" />A way to store information to keep using it through your program.</label>
+        <label for="var_4"><input type="radio" name="vari" value="0" id="var_4"/>A way to add a new element.</label>          
         <button id="button1" class="btn">Next</button>
     </form>
     </div>
@@ -60,10 +60,10 @@
         <form id="form2">
         <h2>What code would you use to create a li element?</h2>
             <label for="code_1"><input type="radio" name="code" value="0" id="code_1" />var i = document.getElementById("li")</label>
-            <label for="code_2"><input type="radio" name="code" value="1" id="code_2" />var i = document.createElement("li")</label>
+            <label for="code_2"><input type="radio" name="code" value="20" id="code_2" />var i = document.createElement("li")</label>
             <label for="code_3"><input type="radio" name="code" value="0" id="code_3" />var i = document.makeElement("li")</label>
             <label for="code_4"><input type="radio" name="code" value="0" id="code_4" />I just don't know.</label>
-            <button id="button2" class="btn">Next</button>
+        <button id="button2" class="btn">Next</button>
         </form>
     </div>
 
@@ -71,38 +71,72 @@
 
     <div class="container" id = "question3">
         <form id="form3">
-            <h2>What does CSS stand for?</h2>
-                <label for="css_1"><input type="radio" name="css" value="0" id="css_1" />Crappy Spring Season</label>
-                <label for="css_2"><input type="radio" name="css" value="1" id="css_2" />Cascading Style Sheet</label>
-                <label for="css_3"><input type="radio" name="css" value="0" id="css_3" />Cooking Sesame Sauce</label>
-                <label for="css_4"><input type="radio" name="css" value="0" id="css_4" />Cascading Style Set</label>
-                <button type="submit" value="Submit">Next</button>
-            </form>
-
+        <h2>What does CSS stand for?</h2>
+            <label for="css_1"><input type="radio" name="css" value="0" id="css_1" />Crappy Spring Season</label>
+            <label for="css_2"><input type="radio" name="css" value="20" id="css_2" />Cascading Style Sheet</label>
+            <label for="css_3"><input type="radio" name="css" value="0" id="css_3" />Cooking Sesame Sauce</label>
+            <label for="css_4"><input type="radio" name="css" value="0" id="css_4" />Cascading Style Set</label>
+        <button id="button3" class="btn">Next</button>
+        </form>
     </div>
 
 
 <!--QUESTION 4-->
 
     <div class="container" id = "question4">
-
-        <button type="next" value="Submit">Next</button>
-    
+        <form id="form4">
+        <h2>What does JSON do?</h2>
+            <label for="jason_1"><input type="radio" name="jason" value="0" id="jason_1" />Sing "Derulo" every time he says his name.</label>
+            <label for="jason_2"><input type="radio" name="jason" value="0" id="jason_2" />Show the jQuery library.</label>
+            <label for="jason_3"><input type="radio" name="jason" value="20" id="jason_3" />Save to local storage.</label>
+            <label for="jason_4"><input type="radio" name="jason" value="0" id="jason_4" />Show the DOM</label>
+        <button id="button4" class="btn">Next</button>
+        </form>
     </div>
 
 <!--QUESTION 5-->
 
     <div class="container" id = "question5">
-
-        <button type="submit" value="Submit">Submit</button>
-    
+        <form id="form5">
+        <h2>What html tag do you use for javascript?</h2>
+            <label for="tag_1"><input type="radio" name="tag" value="0" id="tag_1" />java</label>
+            <label for="tag_2"><input type="radio" name="tag" value="0" id="tag_2" />js</label>
+            <label for="tag_3"><input type="radio" name="tag" value="20" id="tag_3" />script</label>
+            <label for="tag_4"><input type="radio" name="tag" value="0" id="tag_4" />javascript</label>
+        <button id="button5" class="btn">Submit Quiz</button>
+        </form>
     </div>
-</div>
+
 <!--Final Score-->
 
 <div class="container" id = "yourscore">
-    <p>Your score is: <span id="score">__</span></p>
-    <p id="grade"></p>
+    <h2>Final score!</h2>
+    <p>Your score is: <span id="score"> </span> %!</p>
+    <form id ="highscore" method ="POST">
+        <label for="nametext">Add Your Name to the Highscores List:</label>
+        <input type="text" placeholder="Your Name:" name="nametext" id="nametext" />
+    </form>
+</div>
+
+    
+<div class ="container" id = "highscoresbox">
+    <div class ="container" id="quiz"> 
+        <button id="quizback" class="btn">Back to Quiz</button>
+    </div>
+
+    <div class="row" id="scoresheader">
+        <div class="col-12" style="text-align: center;">
+            <p><strong>Highscores</strong></p>         
+         </div>  
+    </div>
+    
+    <div class="scoreinfo">
+        <h1 style="text-align: center;">Players</h1>
+        <ul id="player-list"></ul>         
+    </div>
+
+</div>
+
 </div>
 
 

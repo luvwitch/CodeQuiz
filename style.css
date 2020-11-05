@@ -98,6 +98,12 @@
     margin: 30px auto;
 }
 
+#lose {
+    margin-top: 200px;
+    font-size: xx-large;
+    text-align: center;
+}
+
 label {
     display: block;
     font-size: 30px;

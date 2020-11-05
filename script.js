@@ -29,37 +29,21 @@ var css = "";
 var jason = "";
 var tag = "";
 
+var sec = 15;
+var time = "";
+
 //FUNCTIONS
 
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-            } else if (--timer == 0){
-            scoretotal = 0;
-            alert("Out of time!");
-            tryagain();
-        }
-
-    }, 1000);
-}
-function tryagain();{
-    location.replace("youlost.html")
+function tryagain(){
+    location.replace("timeout.html");
 };
 
 
 function start(){
     startBox.setAttribute("style", "display: none;");
     question1.setAttribute("style", "display: block;");
+    
 };
 
 function getSaved(){
@@ -90,13 +74,23 @@ function saveScore(){
     };
 };
 
-function getScore(){
+function getScore(){ 
     var scoretotal = ""; 
     scoreAdd = parseFloat(vari) + parseFloat(code) + parseFloat(css) + parseFloat(jason) + parseFloat(tag);      
     var scoretotal = scoreAdd;
     console.log(scoretotal); 
     score.textContent = scoretotal;
   };
+
+function myTimer() {
+    timer.innerHTML = sec + " seconds left";
+    sec--;
+    if (sec == -1) {
+        clearInterval(myTimer);
+        alert("Time out!!");
+        tryagain();        
+    }      
+};
 
 //EVENT LISTENERS
 
@@ -106,18 +100,20 @@ startBtn.addEventListener("click", function(event){
     event.preventDefault();
     scores.setAttribute("style", "display: none;")    
     start();
+    setInterval(myTimer, 1000);    
 });
-
-startBtn.onclick = function () {
-    var halfMinute = 30 * 1,
-        display = document.querySelector('#time');
-    startTimer(halfMinute, display);
-};
 
 button1.addEventListener("click", function(event){
     event.preventDefault();
     vari = parseInt(document.querySelector('input[name = "vari"]:checked').value);
     console.log(vari);
+    if (vari > 0){
+        sec++;
+        console.log("extra time!");
+    } else if (vari === 0) {
+        sec--;
+        console.log("oh no!");
+    }
     startBox.setAttribute("style", "display: none;");   
     question1.setAttribute("style", "display: none;");
     question2.setAttribute("style", "display: block;");
@@ -127,6 +123,13 @@ button2.addEventListener("click", function(event){
     event.preventDefault();
     code = parseInt(document.querySelector('input[name = "code"]:checked').value);
     console.log(code);
+    if (code > 0){
+        sec++;
+        console.log("extra time!");
+    } else if (code === 0) {
+        sec--;
+        console.log("oh no!");
+    }
     startBox.setAttribute("style", "display: none;");
     question2.setAttribute("style", "display: none;");
     question3.setAttribute("style", "display: block;")	   
@@ -136,6 +139,13 @@ button3.addEventListener("click", function(event){
     event.preventDefault();
     css = parseInt(document.querySelector('input[name = "css"]:checked').value);    
     console.log(css);
+    if (css > 0){
+        sec++;
+        console.log("extra time!");
+    } else if (css === 0) {
+        sec--;
+        console.log("oh no!");
+    }
     startBox.setAttribute("style", "display: none;"); 
     question3.setAttribute("style", "display: none;");
     question4.setAttribute("style", "display: block;")	   
@@ -145,6 +155,13 @@ button4.addEventListener("click", function(event){
     event.preventDefault();
     jason = parseInt(document.querySelector('input[name = "jason"]:checked').value);    
     console.log(jason);
+    if (jason > 0){
+        sec++;
+        console.log("extra time!");
+    } else if (jason === 0) {
+        sec--;
+        console.log("oh no!");
+    }
     startBox.setAttribute("style", "display: none;"); 
     question4.setAttribute("style", "display: none;");
     question5.setAttribute("style", "display: block;")	   
@@ -152,8 +169,9 @@ button4.addEventListener("click", function(event){
 
 button5.addEventListener("click", function(event){
     event.preventDefault();
+    clearInterval(myTimer);
     tag = parseInt(document.querySelector('input[name = "tag"]:checked').value);
-    console.log(tag); 
+    console.log(tag);
     getScore();
     startBox.setAttribute("style", "display: none;");
     question5.setAttribute("style", "display: none;");

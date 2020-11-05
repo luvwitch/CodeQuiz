@@ -83,14 +83,19 @@ function getScore(){
   };
 
 function myTimer() {
+    var interval = setInterval(function () {    
     timer.innerHTML = sec + " seconds left";
-    sec--;
+    sec--;    
     if (sec == -1) {
-        clearInterval(myTimer);
+        clearInterval(interval);
         alert("Time out!!");
         tryagain();        
-    }      
-};
+    }else if ( yourscore.style.display === "block"){
+        clearInterval(interval);
+    }
+    }, 1000); 
+};      
+
 
 //EVENT LISTENERS
 
@@ -100,7 +105,7 @@ startBtn.addEventListener("click", function(event){
     event.preventDefault();
     scores.setAttribute("style", "display: none;")    
     start();
-    setInterval(myTimer, 1000);    
+    myTimer();    
 });
 
 button1.addEventListener("click", function(event){
@@ -168,8 +173,7 @@ button4.addEventListener("click", function(event){
 });
 
 button5.addEventListener("click", function(event){
-    event.preventDefault();
-    clearInterval(myTimer);
+    event.preventDefault();    
     tag = parseInt(document.querySelector('input[name = "tag"]:checked').value);
     console.log(tag);
     getScore();
